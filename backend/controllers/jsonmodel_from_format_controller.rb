@@ -24,7 +24,7 @@ class ArchivesSpaceService < Sinatra::Base
         csv: ->(content) { init_converter(DigitalObjectConverter, :parse_as_csv, content) },
       },
       resource: {
-        ead: ->(content) { init_converter(EADConverter, :parse_as_xml, content) },
+        ead: ->(content) { init_converter(BHLEADConverter, :parse_as_xml, content) },
         marcxml: ->(content) { init_converter(MarcXMLConverter, :parse_as_xml, content) },
       },
     }
